@@ -1,7 +1,7 @@
 import cv2
 import face_recognition as fr
 
-rostos_conhecidos = [("Elon-Musk.jpg", "Elon Musk"), ("imgCadastro.jpeg", "Fabiana"), ("pessoa-interessante.png", "Alice")]
+rostos_conhecidos = [("Elon-Musk.jpg", "Elon Musk"), ("imgCadastro.jpeg", "Fabiana"),("anna.jpeg", "Anna"),("socorro.png", "Socorro"), ("diogo.jpg", "Diogo")]
 
 def detecta_face(frame):
     rosto = fr.face_encodings(frame)
@@ -21,7 +21,7 @@ def procura_conhecido(face_encoding):
 
         if(fr.compare_faces([face_encoding], face)[0]):
             cont = 1
-            return f"Olá, {p[1]}!"
+            return f"Hey, {p[1]}!"
 
     if (cont > 0):
         return "Usuário não identificado"
